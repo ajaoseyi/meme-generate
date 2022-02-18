@@ -46,7 +46,6 @@ const [thirdScreen, setThirdScreen] = useState(false);
       {loading && (
         <div>
           <Lottie options={defaultOptions} height={400} width={400} />{" "}
-         
         </div>
       )}
       {memesScreen && (
@@ -77,7 +76,7 @@ const [thirdScreen, setThirdScreen] = useState(false);
           <form
             onSubmit={async (e) => {
               e.preventDefault();
-              setLoading(true)
+              setLoading(true);
               setSecondScreen(false);
               // add logic to create meme from api
               const params = {
@@ -95,8 +94,6 @@ const [thirdScreen, setThirdScreen] = useState(false);
               );
               const json = await response.json();
               setFinalMeme(json.data.url);
-              
-              
             }}
           >
             <div className="input_field">
@@ -116,12 +113,14 @@ const [thirdScreen, setThirdScreen] = useState(false);
               />
             </div>
 
-            <button type="submit" className="submit_button">Submit</button>
+            <button type="submit" className="submit_button">
+              Submit
+            </button>
           </form>
         </div>
       )}
       {thirdScreen && (
-        <div>
+        <div className="final_image">
           <img src={finalMeme} alt="" />
         </div>
       )}

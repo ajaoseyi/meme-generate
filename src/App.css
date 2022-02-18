@@ -62,6 +62,9 @@ h3{
 .image img{
 width: 300px;
 }
+.final_image img {
+max-width: 400px;
+}
 .image{
   display: grid;
   display: -moz-grid;
@@ -86,4 +89,10 @@ width: 150px;
   height: 200px;
   margin-left: 32px;
 }
+.final_image img {
+max-width: 70%;
+margin-left: 32px;
+
+}
+
 }
