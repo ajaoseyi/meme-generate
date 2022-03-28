@@ -1,6 +1,6 @@
 @font-face {
   font-family: open-sans;
-  src: url("../src/asset/OpenSans-VariableFont_wdth\,wght.ttf");
+  src: url("../src/asset/OpenSans-Bold.ttf");
 }
 
 body{
@@ -11,12 +11,12 @@ body{
   max-width: 60%;
 }
 input{
- width: 308px;
-height: 40px;
+ width: 90%;
+height: 50px;
 background: #F1EEEE;
 border-radius: 10px;
 border-right: none;
-border-bottom:0.7px solid #bd66d3;
+border-bottom:0.7px solid black;
 margin-left: 20px!important;
 margin-bottom: 24px!important;
 color: black  ;
@@ -26,6 +26,7 @@ line-height: 30px;
 border-top: none;
 border-left: none;
 margin-top:14px ;
+padding-left:12px;
 
 }
 input:active{
@@ -36,12 +37,13 @@ input:active{
   background-color: white;
 }
 .submit_button{
+  margin-left:20px!important;
 width: 128px;
 height: 40px;
 border: 2px solid #bd66d3;
 box-sizing: border-box;
 border-radius: 10px;
-margin-left: 20px;
+
 background-color: #bd66d3;
 color: white; 
 font-size: 18px;
@@ -50,12 +52,26 @@ letter-spacing: 0.185em;
 font-family: poppins-light;
 margin-top: 24px;
 }
-h3{
-  color: #bd66d3;
+h1{
+  color: black;
   font-family: open-sans;
   font-weight: 800;
-  font-size: 24px;
-  margin-left: 32px;
+  font-size: 3px;
+  text-align:center;
+  padding-top:1.5em
+}
+h3{
+  text-align:center;
+}
+.selected_image{
+  text-align:center;
+  margin-top:2.5em
+}
+.final_image{
+  text-align:center;
+}
+.submit_btn{
+  margin-left:20px
 }
 
 @media only screen and (min-width: 800px) {
@@ -91,7 +107,7 @@ width: 150px;
 }
 .final_image img {
 max-width: 70%;
-margin-left: 32px;
+
 
 }
 

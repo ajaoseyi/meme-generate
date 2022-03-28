@@ -1,5 +1,8 @@
 import React, {useEffect, useState} from "react"
 import './App.css';
+import Roll from 'react-reveal/Roll';
+import Zoom from 'react-reveal/Zoom'
+import "bootstrap/dist/css/bootstrap.min.css";
 import Meme from "./meme";
 import loader from "./asset/loader.json"
 import Lottie from "react-lottie";
@@ -50,11 +53,14 @@ const [thirdScreen, setThirdScreen] = useState(false);
       )}
       {memesScreen && (
         <div>
-          <h3>Meme Generator</h3>
+          <h1>Meme Generator</h1>
           <div className="image">
+         
             {memes.map((meme) => {
               return (
+                <Roll left>
                 <Meme
+                  id={meme}
                   meme={meme}
                   onclick={() => {
                     setEventImage(meme.url);
@@ -63,16 +69,20 @@ const [thirdScreen, setThirdScreen] = useState(false);
                     setMemesScreen(false);
                   }}
                 />
+                </Roll>
               );
             })}
+             
           </div>
         </div>
       )}
       {secondScreen && (
         <div className="form">
+        <Zoom left>
           <div className="selected_image">
             <img src={eventImage} alt="" />
           </div>
+          </Zoom>
           <form
             onSubmit={async (e) => {
               e.preventDefault();
@@ -96,7 +106,7 @@ const [thirdScreen, setThirdScreen] = useState(false);
               setFinalMeme(json.data.url);
             }}
           >
-            <div className="input_field">
+            <div className="input_field mt-4">
               <input
                 type="text"
                 placeholder="Top Text"
@@ -112,16 +122,19 @@ const [thirdScreen, setThirdScreen] = useState(false);
                 onChange={(e) => setBottomText(e.target.value)}
               />
             </div>
-
-            <button type="submit" className="submit_button">
-              Submit
-            </button>
+<div className="submit_btn"  >
+           <button type="submit" className="btn btn-dark lg">Submit</button>
+           </div>
           </form>
         </div>
       )}
       {thirdScreen && (
-        <div className="final_image">
+        <div>
+        <h1 className="pb-3 center">Result</h1>
+        <h3 className="pb-2 ">Here is your Meme</h3>
+        <div className="final_image pt-1">
           <img src={finalMeme} alt="" />
+        </div>
         </div>
       )}
     </div>
